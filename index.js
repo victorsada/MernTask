@@ -10,12 +10,11 @@ conectarDB();
 
 //habilitar cors
 app.use(cors()); //hace que el front y back puedan estar en dos dominios distintos
-
 //Habilitar express.json
 app.use(express.json({ extend: true })); //nos permitira leer datos que el usuario coloque
 
 //Puerto de la app.
-const port = process.env.port || 4000; // si existe process.env.port se da ese puerto, sino el 4000. (4000 para que no coincida con el de cliente)
+const port = process.env.PORT || 4000; // si existe process.env.port se da ese puerto, sino el 4000. (4000 para que no coincida con el de cliente)
 
 // Importar rutas
 app.use("/api/usuarios", require("./routes/usuarios"));
